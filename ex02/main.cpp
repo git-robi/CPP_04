@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rgiambon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/01 11:58:38 by rgiambon          #+#    #+#             */
+/*   Updated: 2025/04/01 11:58:59 by rgiambon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
@@ -22,8 +34,8 @@ int main()
     cat->makeSound();
 
     std::cout << "\n-------- Testing Destructors --------" << std::endl;
-    delete dog;  // Should call Dog destructor then Animal destructor
-    delete cat;  // Should call Cat destructor then Animal destructor
+    delete dog;
+    delete cat;
 
     return 0;
 }

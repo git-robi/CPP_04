@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rgiambon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/01 12:00:29 by rgiambon          #+#    #+#             */
+/*   Updated: 2025/04/01 12:00:37 by rgiambon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
 #include <iostream>
 
-class ICharacter;  // Forward declaration
+class ICharacter;
 
 class AMateria
 {
