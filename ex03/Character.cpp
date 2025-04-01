@@ -16,29 +16,29 @@
 Character::Character() : name("default")
 {
     for (int i = 0; i < 4; i++)
-        slots[i] = nullptr;
+        slots[i] = NULL;
     for (int i = 0; i < 100; i++)
-        floor[i] = nullptr;
+        floor[i] = NULL;
 }
 
 Character::Character(std::string name) : name(name)
 {
     for (int i = 0; i < 4; i++)
-        slots[i] = nullptr;
+        slots[i] = NULL;
     for (int i = 0; i < 100; i++)
-        floor[i] = nullptr;
+        floor[i] = NULL;
 }
 
 Character::~Character()
 {
     for (int i = 0; i < 4; i++)
     {
-        if (slots[i] != nullptr)
+        if (slots[i] != NULL)
             delete slots[i];
     }
     for (int i = 0; i < 100; i++)
     {    
-        if (floor[i] != nullptr)
+        if (floor[i] != NULL)
             delete floor[i];
     }
 }
@@ -47,17 +47,17 @@ Character::Character(Character const &other) : name(other.name)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (other.slots[i] != nullptr)
+        if (other.slots[i] != NULL)
             slots[i] = other.slots[i]->clone();
         else
-            slots[i] = nullptr;
+            slots[i] = NULL;
     }
     for (int i = 0; i < 100; i++)
     {
-        if (other.floor[i] != nullptr)
+        if (other.floor[i] != NULL)
             floor[i] = other.floor[i]->clone();
         else
-            floor[i] = nullptr;
+            floor[i] = NULL;
     }
 }
 
@@ -67,34 +67,34 @@ Character& Character::operator=(Character const &other)
     {
         for (int i = 0; i < 4; i++)
         {
-            if (slots[i] != nullptr)
+            if (slots[i] != NULL)
             {
                 delete slots[i];
-                slots[i] = nullptr;
+                slots[i] = NULL;
             }
         }
         for (int i = 0; i < 100; i++)
         {
-            if (floor[i] != nullptr)
+            if (floor[i] != NULL)
             {
                 delete floor[i];
-                floor[i] = nullptr;
+                floor[i] = NULL;
             }
         }
         name = other.name;
         for (int i = 0; i < 4; i++)
         {
-            if (other.slots[i] != nullptr)
+            if (other.slots[i] != NULL)
                 slots[i] = other.slots[i]->clone();
             else
-                slots[i] = nullptr;
+                slots[i] = NULL;
         }
         for (int i = 0; i < 100; i++)
         {
-            if (other.floor[i] != nullptr)
+            if (other.floor[i] != NULL)
                 floor[i] = other.floor[i]->clone();
             else
-                floor[i] = nullptr;
+                floor[i] = NULL;
         }
     }
     return *this;
@@ -107,12 +107,12 @@ std::string const& Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-    if (m == nullptr)
+    if (m == NULL)
         return;
         
     for (int i = 0; i < 4; i++)
     {
-        if (slots[i] == nullptr)
+        if (slots[i] == NULL)
         {
             slots[i] = m;
             return;  // Exit after equipping
@@ -122,16 +122,16 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-    if (idx < 0 || idx >= 4 || slots[idx] == nullptr)
+    if (idx < 0 || idx >= 4 || slots[idx] == NULL)
         return;
         
     int i = 0;
     while(i < 100)
     {
-        if (floor[i] == nullptr)
+        if (floor[i] == NULL)
         {
             floor[i] = slots[idx];
-            slots[idx] = nullptr;
+            slots[idx] = NULL;
             return;
         }
         i++;
@@ -140,6 +140,6 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-    if (idx >= 0 && idx < 4 && slots[idx] != nullptr)
+    if (idx >= 0 && idx < 4 && slots[idx] != NULL)
         slots[idx]->use(target);
 }
